@@ -8,9 +8,11 @@ let admin_set_tiger_card;
 
 const type_of_card = ["♦️", "♥️", "♠️", "♣️"];
 const dragonTiger = async (msg) => {
+  console.log("game command received");
   const chatId = msg.chat.id;
-
   if (msg.chat.type === "group" || msg.chat.type === "supergroup") {
+    console.log("command from admin for game");
+
     const data = await bot.getChatAdministrators(chatId);
     const adminIds = data
       .filter((admin) => !admin.user.is_bot)
