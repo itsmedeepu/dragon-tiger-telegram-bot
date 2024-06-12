@@ -24,11 +24,15 @@ server.get("/test", (req, res) => {
 
 server.post(`/bot${process.env.BOT_TOKEN}`, (req, res) => {
   bot.processUpdate(req.body);
-  res.status(200);
+  res.sendStatus(200);
 });
 
 server.listen(port, () => {
   console.log("bot up and  runnig sucessfully");
+});
+
+bot.on("message", (msg) => {
+  bot.sendMessage(msg.chat.id, "I am alive!");
 });
 
 bot.onText(/\/test/, Test);
