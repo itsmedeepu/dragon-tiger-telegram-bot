@@ -31,9 +31,9 @@ server.listen(port, () => {
   console.log("bot up and  runnig sucessfully");
 });
 
-bot.on("message", (msg) => {
-  bot.sendMessage(msg.chat.id, "I am alive!");
-});
+// bot.on("message", (msg) => {
+//   bot.sendMessage(msg.chat.id, "I am alive!");
+// });
 
 bot.onText(/\/test/, Test);
 bot.onText(/\/game/, Game);
